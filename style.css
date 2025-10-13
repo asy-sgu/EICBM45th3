@@ -1,163 +1,226 @@
-/* 기본 리셋 */
-* {
-    box-sizing: border-box;
+/* --- 기본 스타일 초기화 (문제 해결 핵심) --- */
+html, body {
     margin: 0;
     padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* 가로 스크롤 완전 방지 */
+    min-height: 100vh;
 }
 
+/* --- 기본 및 모바일 스타일 (Mobile-First) --- */
 body {
-    font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
-    line-height: 1.6;
-    background-color: #f4f7f6;
+    /* 요청하신 글꼴과 스타일 적용 및 모든 글자 가운데 정렬 */
+    font-family: "Gowun Dodum", sans-serif; 
+    font-weight: 400; 
+    font-style: normal;
+    text-align: center; /* 모든 텍스트 가운데 정렬 */
+
+    background-color: #f8f8f8;
     color: #333;
+    line-height: 1.6;
+    position: relative; 
 }
 
-/* 헤더 스타일 */
-header {
-    background-color: #004F30;
-    color: white;
-    padding: 20px 15px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* 최상위 컨테이너: 중앙 정렬을 확실하게 보장 */
+#app-container {
+    width: 100%;
+    margin: 0 auto; /* 블록 요소 중앙 정렬 */
 }
 
-/* 푸터 스타일 */
-footer {
-    text-align: center;
-    padding: 10px;
+/* 숨겨진 페이지 스타일 */
+.hidden-page {
+    display: none !important; 
+    opacity: 0;
+}
+
+/* 모든 주요 섹션에 적용하여 화면 전체를 차지하게 함 */
+.content-section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px 15px; 
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+/* 홈으로 돌아가기 버튼 스타일 */
+.back-to-home-btn {
+    position: sticky; 
+    top: 0;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    margin: 10px auto; 
+    display: inline-block;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+h2 {
+    margin: 20px 0 15px;
+    color: #4a4a4a;
+    font-size: 1.5em; 
+}
+
+/* --- 0. 홈 화면 섹션 스타일: Grid로 완벽한 중앙 정렬 강제 --- */
+.home-section {
+    display: grid; /* Grid Layout 사용 */
+    place-items: center; /* 내부 콘텐츠를 수직/수평 중앙에 배치 */
+    background-color: white;
+    /* 나머지 스타일은 그대로 유지 */
+}
+
+/* 로고와 버튼 영역을 감싸는 컨테이너 */
+.logo-area, .home-buttons {
+    width: 100%;
+    max-width: 300px; /* 중앙에 정렬될 최대 너비 설정 */
+    margin: 0 auto;
+}
+
+.logo-img {
+    width: 150px; 
+    height: auto;
+    margin-bottom: 20px;
+    border: 1px solid #ddd; 
+    border-radius: 8px;
+}
+
+.home-buttons {
     margin-top: 30px;
-    background-color: #eaf0e8;
-    color: #666;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+/* 버튼 기본 스타일 */
+.primary-btn, .secondary-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.primary-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+.secondary-btn {
+    background-color: #ffffff; 
+    color: #007bff; 
+    border: 2px solid #007bff;
+}
+
+/* --- 1. 브랜드 스토리 섹션 스타일 --- */
+.intro-section {
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* 좌/우 블록 기본 설정 (모바일에서는 100% 너비) */
+.intro-left, .intro-right {
+    width: 100%;
+    background-color: white;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    box-sizing: border-box; 
+    margin: 0 auto; 
+}
+
+/* 이미지 3x2 그리드 */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px; 
+    margin: 0 auto 15px; 
+    max-width: 400px; 
+}
+
+.grid-item img {
+    width: 100%;
+    height: 60px; 
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+    margin: 0 auto; 
+}
+
+/* --- 2. 월별 추천 시장 섹션 스타일 --- */
+.recommend-section {
+    max-width: 100%;
+    margin: 0 auto; 
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+.month-selector {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 8px;
+    margin: 0 auto 20px; 
+    max-width: 400px; 
+}
+
+.month-btn {
+    padding: 8px 5px; 
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+    cursor: pointer;
+    border-radius: 5px;
     font-size: 0.9em;
 }
 
-/* --- SVG 내부 스타일 통합 (지역별 기본 색상) --- */
-
-/* .st0: 일반적인 지역 채우기 및 테두리 스타일 */
-.st0 {
-    fill: #B8B8B8;
-    stroke: #FFFFFF;
-    stroke-width: 0.5;
+#marketDetails.hidden {
+    display: none;
 }
 
-/* .st1: 선 스타일 (경계선, 외곽선 등 - 지도 경계) */
-.st1 {
-    fill: none;
-    stroke: #000000;
-    stroke-width: 0.5;
-}
-
-/* --- 메인 레이아웃 (반응형/Flexbox) --- */
-
-.container {
-    display: flex;
-    flex-direction: column; /* 모바일 우선: 세로 배열 */
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 15px;
-    gap: 30px; /* 요소 간 간격 */
-}
-
-/* 지도 컨테이너 스타일 */
-#map-container {
-    width: 100%;
-    flex-grow: 1;
-    min-height: 300px;
+/* 푸터 */
+footer {
     padding: 10px;
+    background-color: #333;
+    color: white;
+    font-size: 0.8em;
 }
 
-/* SVG 태그 자체 스타일 (컨테이너에 맞춰 크기 조절) */
-#map-container svg {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* 마우스 호버 시 지역 강조 스타일 */
-#map-container svg path:hover,
-#map-container svg polygon:hover {
-    fill: #FB6C04; /* 호버 시 강조 색상 (주황색) */
-    stroke: #CF5700;
-    stroke-width: 2px;
-    cursor: pointer;
-    transition: fill 0.3s ease;
-}
-
-/* --- 정보 패널 박스 스타일 (시각적 개선) --- */
-
-.info-panel {
-    width: 100%;
-    
-    /* 박스 디자인 */
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.info-panel h2 {
-    color: #38761d;
-    margin-bottom: 15px;
-    border-bottom: 3px solid #ff9900;
-    padding-bottom: 8px;
-    font-size: 1.6em;
-}
-
-#region-name {
-    font-size: 1.4em;
-    font-weight: bold;
-    color: #cc6600;
-    margin-bottom: 15px;
-}
-
-#market-info, #specialty-info {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    line-height: 1.5;
-}
-
-/* 리스트 항목 스타일링 */
-.info-panel ul {
-    list-style-type: none;
-    padding-left: 0;
-    margin-top: 5px;
-}
-
-.info-panel li {
-    padding-left: 15px;
-    position: relative;
-    margin-bottom: 3px;
-}
-
-.info-panel li::before {
-    content: "•"; /* 리스트 마커를 작은 원형 점으로 */
-    color: #38761d;
-    font-weight: bold;
-    display: inline-block; 
-    width: 1em;
-    margin-left: -1em;
-}
-
-/* --- 데스크탑 (PC) 레이아웃 (min-width: 768px 이상) --- */
-
+/* --- 미디어 쿼리 (PC 환경) --- */
 @media (min-width: 768px) {
-    .container {
-        flex-direction: row; /* PC: 가로 배열 */
+    
+    .home-buttons {
+        flex-direction: row; 
+        max-width: 450px;
     }
 
-    #map-container {
-        width: 65%; /* 지도 영역을 더 넓게 */
+    /* 브랜드 스토리 섹션: 좌우로 나열 */
+    .intro-section {
+        flex-direction: row;
+        max-width: 1200px; 
+        padding: 20px;
     }
 
-    .info-panel {
-        width: 35%; /* 정보 패널 영역 */
-        /* 스크롤 시 상단에 고정 */
-        position: sticky; 
-        top: 20px;
-        height: fit-content;
-        margin-top: 0;
+    .intro-left, .intro-right {
+        flex: 1; 
+        padding: 25px;
+    }
+    
+    /* 캘린더 모양: 6열로 배치 */
+    .month-selector {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10px;
+        max-width: 700px; 
+    }
+    
+    .recommend-section {
+        max-width: 800px;
     }
 }
