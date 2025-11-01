@@ -1,0 +1,235 @@
+/* --- 기본 스타일 초기화 (문제 해결 핵심) --- */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* 가로 스크롤 완전 방지 */
+    min-height: 100vh;
+}
+
+
+/* --- 기본 및 모바일 스타일 (Mobile-First) --- */
+body {
+    /* 글꼴과 스타일 적용 및 모든 글자 가운데 정렬 */
+    font-family: "Gowun Dodum", sans-serif; 
+    font-weight: 400; 
+    font-style: normal;
+    text-align: center; /* 모든 텍스트 가운데 정렬 */
+
+    background-color: #004F30;
+    color: #F6EFE3;
+    line-height: 1.6;
+    position: relative; 
+}
+
+/* 최상위 컨테이너: 중앙 정렬을 확실하게 보장 */
+#app-container {
+    width: 100%;
+    margin: 0 auto; /* 블록 요소 중앙 정렬 */
+}
+
+/* 숨겨진 페이지 스타일 */
+.hidden-page {
+    display: none !important; 
+    opacity: 0;
+}
+
+/* 모든 주요 섹션에 적용하여 화면 전체를 차지하게 함 */
+.content-section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px 15px; 
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+/* 홈으로 돌아가기 버튼 스타일 */
+.back-to-home-btn {
+    position: sticky; 
+    top: 0;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    margin: 10px auto; 
+    display: inline-block;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+h2 {
+    margin: 20px 0 15px;
+    color: #4a4a4a;
+    font-size: 1.5em; 
+}
+
+/* --- 0. 홈 화면 섹션 스타일: Grid로 완벽한 중앙 정렬 강제 --- */
+.home-section {
+    display: grid; /* Grid Layout 사용 */
+    place-items: center; /* 내부 콘텐츠를 수직/수평 중앙에 배치 */
+    background-color: white;
+    /* 나머지 스타일은 그대로 유지 */
+}
+
+/* 로고와 버튼 영역을 감싸는 컨테이너 */
+.logo-area, .home-buttons {
+    width: 100%;
+    max-width: 300px; /* 중앙에 정렬될 최대 너비 설정 */
+    margin: 0 auto;
+}
+
+.logo-img {
+    width: 250px; 
+    height: auto;
+    margin-bottom: 5px;
+    border: none; 
+    border-radius: 50px;
+}
+
+.home-buttons {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+/* 버튼 기본 스타일 */
+.primary-btn, .secondary-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.primary-btn {
+    background-color: #F6EFE3;
+    color: #004F30;
+    border: none;
+}
+
+.secondary-btn {
+    background-color: #F6EFE3; 
+    color: #004F30; 
+    border: none;
+}
+
+/* --- 1. 브랜드 스토리 섹션 스타일 --- */
+.intro-section {
+    display: flex;
+    background-color: #F6EFE3;
+    flex-direction: column; 
+    gap: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* 좌/우 블록 기본 설정 (모바일에서는 100% 너비) */
+.intro-left {
+    width: 100%;
+    background-color: #F6EFE3;
+    padding: 15px;
+    box-sizing: border-box; 
+    margin: 0 auto; 
+    color: #333
+}
+
+/* 원하는 폰트 색상을 지정합니다 */
+.highlight {
+    color: #004F33;
+    font-weight: 900;
+}
+
+/* 이미지 그리드 */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px; 
+    margin: 0 auto 15px; 
+    max-width: 400px; 
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto; 
+    object-fit: cover;
+    display: block;
+    border-radius: 0px;
+    margin: 0 auto; 
+}
+
+/* --- 2. 월별 추천 시장 섹션 스타일 --- */
+.recommend-section {
+    max-width: 100%;
+    margin: 0 auto; 
+    padding: 15px;
+    background-color: #F6EFE3;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    color: #333
+}
+
+.month-selector {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 8px;
+    margin: 0 auto 20px; 
+    max-width: 400px; 
+}
+
+.month-btn {
+    padding: 8px 5px; 
+    border: 1px solid white;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+
+
+#marketDetails.hidden {
+    display: none;
+}
+
+/* 푸터 */
+footer {
+    padding: 10px;
+    background-color: #004F30;
+    color: white;
+    font-size: 0.8em;
+}
+
+/* --- 미디어 쿼리 (PC 환경) --- */
+@media (min-width: 768px) {
+    
+    .home-buttons {
+        flex-direction: row; 
+        max-width: 450px;
+    }
+
+    /* 브랜드 스토리 섹션: 좌우로 나열 */
+    .intro-section {
+        flex-direction: row;
+        max-width: 1200px; 
+        padding: 20px;
+    }
+
+    .intro-left, .intro-right {
+        flex: 1; 
+        padding: 25px;
+    }
+    
+    /* 캘린더 모양: 6열로 배치 */
+    .month-selector {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10px;
+        max-width: 700px; 
+    }
+    
+    .recommend-section {
+        max-width: 800px;
+    }
+}

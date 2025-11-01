@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>비:장 - 브랜드 스토리</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container"> 
+        
+        <section id="home-section" class="content-section">
+            <div class="logo-area">
+                <img src="bjlogo.jpg" alt="브랜드 로고" class="logo-img">
+                <p>전통시장에서의 특별한 경험이<br>
+                일상 속 특별한 기억으로</p>
+            </div>
+            <div class="home-buttons">
+                <button data-target="story-section" class="primary-btn page-link home-btn">브랜드 스토리 보러가기</button>
+                <button data-target="market-section" class="secondary-btn page-link home-btn">월별 추천 시장</button>
+            </div>
+        </section>
+        
+        <section id="story-section" class="intro-section hidden-page content-section">
+            <button class="back-to-home-btn page-link" data-target="home-section">← 홈으로</button>
+            <h2><span class="highlight">왜 전통시장인가요?</span></h2>
+            
+            <div class="intro-left">
+                <div class="image-grid">
+                    <div class="grid-item"><img src="bs1.jpg" alt="이미지 1"></div>
+                    <div class="grid-item"><img src="bs2.jpg" alt="이미지 2"></div>
+                    <div class="grid-item"><img src="bs3.jpg" alt="이미지 3"></div>
+                </div>
+                <div class="brand-story-text">
+                    <p>요즘에 직접 장 보러 간 적 있으신가요?<br>온라인 쇼핑이 일상화되면서,<br><span class="highlight">전통시장은 점차 잊혀지고 있습니다.</span><br>하지만 시장에는 여전히<br>지역의 기억과 온기가 깃들어 있습니다.</p>
+                    <p>우리나라 곳곳에는 다양한 시장이 존재합니다.<br>서울의 광장시장이나 경동시장 외에도<br>대구의 서문시장, 강릉의 중앙시장,<br>그리고 우리 동네 주변 작은 시장까지.</p>
+                    <p><span class="highlight">우리는 전통시장으로 향하는<br>발걸음을 만들어내고 싶습니다.</span><br>계절과 때에 딱 맞는 시장을 방문하다보면<br>그 발자국들은 모여서 달력이 될 것입니다.<br>밀랍랩과 함께하는 장보기 경험은<br>결국은 일상이 되리라 믿습니다.</p>
+                    <p><span class="highlight">비:장과 함께 전통시장의 온기를 느껴보아요.</span></p>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="market-section" class="recommend-section hidden-page content-section">
+            <button class="back-to-home-btn page-link" data-target="home-section">← 홈으로</button>
+            <h2>월별 추천 시장</h2>
+            
+            <div class="month-selector">
+                </div>
+
+            <div class="market-content">
+                <div class="default-message">
+                    <p>월을 선택하여 월별 추천 시장 정보를 확인해 보세요!</p>
+                </div>
+                
+                <div id="marketDetails" class="hidden">
+                    <h3 id="marketTitle"></h3>
+                    <img id="marketImage" src="" alt="추천 시장 이미지">
+                    <p id="marketReason"></p>
+                </div>
+            </div>
+        </section>
+        
+    </div> <footer>
+        <p>&copy; 2025 EIC 45th group3 - BEE : JANG</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
